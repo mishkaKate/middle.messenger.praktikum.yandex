@@ -1,0 +1,24 @@
+.button {
+    border: none;
+    height: 38px;
+    border-radius: 8px;
+    color: var(--color-active);
+    background: transparent;
+}
+
+.button_main {
+    color: white;
+    background-color: var(--color-active);
+}
+
+.button_back {
+    height: 100vh;
+    min-width: 48px;
+}
+
+.button__a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

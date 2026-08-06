@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+
+.main-page {
+    display: flex;
+
+    & .profile {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 18px;
+    }
+
+    & .profile-button {
+    border: none;
+    background: transparent;
+    }
+}
+
+.navigation {
+    height: 100vh;
+    box-sizing: border-box;
+    width: 310px;
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-right: 1px solid var(--border-color);
+
+    & .search {
+        margin-bottom: 12px;
+    }
+}
