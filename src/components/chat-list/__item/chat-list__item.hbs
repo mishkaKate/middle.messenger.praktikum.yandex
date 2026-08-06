@@ -1,0 +1,15 @@
+<div class="chat-item" data-id="{{id}}">
+  <div class="chat-item__block {{#if unreadCount}}chat-item__block--unread{{/if}}">
+   {{> avatar}}
+   <div class="chat-item__text">
+    
+      <h3 class="chat-item__name">
+        {{title}}
+      </h3>
+   
+    <div class="chat-item_messege">
+      {{last_message.content}}
+    </div>
+   </div>
+  </div>
+</div>

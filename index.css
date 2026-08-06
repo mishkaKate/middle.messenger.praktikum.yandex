@@ -1,0 +1,28 @@
+@import url("src/components/chat-list/chat-list.css");
+@import url("src/components/chat-list/__item/chat-list__item.css");
+@import url("src/components/avatar/avatar.css");
+@import url("src/components/search-input/search-input.css");
+@import url("src/pages/main/main-page.css");
+@import url("src/components/chat-content/chat-content.css");
+@import url("src/components//button/button.css");
+@import url("src/components/input/input.css");
+@import url("src/components/form/form.css");
+@import url("src/pages/profile/profile-page.css");
+@import url("src/pages/notfound/notfound-page.css");
+
+@font-face {
+  font-family: rushin;
+  src: url("/public/font/rushin.ttf") format("ttf");
+  font-weight: 400; font-style: normal;
+}
+
+:root {
+  --bg-color: #FBFBFB;
+  --border-color: #EAEAEA;
+  --color-active: #3369F3;
+  --bg-dark: #EFEFEF;
+}
+
+body {
+  font-family: rushin, sans-serif;
+}
