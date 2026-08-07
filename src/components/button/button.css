@@ -6,17 +6,17 @@
     background: transparent;
 }
 
-.button_main {
+.button-role-main {
     color: white;
     background-color: var(--color-active);
 }
 
-.button_back {
+.button-role-back {
     height: 100vh;
     min-width: 48px;
 }
 
-.button__a {
+.button-a {
     height: 100%;
     display: flex;
     align-items: center;

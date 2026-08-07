@@ -11,28 +11,28 @@
             }
         }
 
-    .profile__title {
+    .profile-title {
         align-self: center;
     }
 
-    .profile__list {
+    .profile-list {
         list-style: none;
         padding: 0;
     }
 
-    .profile-list__item {
+    .profile-list-item {
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid var(--border-color) ;
     }
 
-    .profile__a {
+    .profile-a {
         margin-top: 12px;
     }
     
 }
 
-.profile-page__content {
+.profile-page-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,7 +40,7 @@
     flex: 2;
 }
 
-.profile-page__footer {
+.profile-page-footer {
     display: flex;
     flex-direction: column;
     align-self: self-start;

@@ -13,7 +13,7 @@
     }
 }
 
-.avatar_m {
+.avatar-size-m {
     width: 34px;
     height: 34px;
 
@@ -23,7 +23,7 @@
     }
 }
 
-.avatar_l {
+.avatar-size-l {
     width: 64px;
     height: 64px;
 

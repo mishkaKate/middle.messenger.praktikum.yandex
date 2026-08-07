@@ -8,18 +8,18 @@
     } 
 }
 
-.chat-item__block {
+.chat-item-block {
     display: flex;
     padding: 8px;
     overflow: hidden;
 }
 
-.chat-item__text {
+.chat-item-text {
     flex-grow: 0;
     min-width: 0;
 }
 
-.chat-item__name {
+.chat-item-name {
     min-width: 0;
      margin-block: 0 8px;
     white-space: nowrap;
@@ -27,7 +27,7 @@
     text-overflow: ellipsis;
 }
 
-.chat-item_messege {
+.chat-item-messege {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;

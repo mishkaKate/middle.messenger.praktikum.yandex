@@ -11,11 +11,11 @@
     height: 100vh;
 }
 
-.form__header {
+.form-header {
     text-align: center;
 }
 
-.form__footer {
+.form-footer {
     margin-top: 48px;
     display: flex;
     flex-direction: column;
