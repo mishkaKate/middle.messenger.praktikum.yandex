@@ -17,6 +17,7 @@ import profileChangePageTpl from "./pages/change-profile/change-profile-page.hbs
 import passwordChangePageTpl from "./pages/change-password/change-password-page.hbs?raw";
 import notFoundPageTpl from "./pages/notfound/notfound-page.hbs?raw";
 import errorPageTpl from "./pages/error/error-page.hbs?raw";
+import startPageTpl from "./pages/start.hbs?raw";
 
 Handlebars.registerPartial("chat-list", chatListTpl)
 Handlebars.registerPartial("chat-item", chatItemTpl);
@@ -30,27 +31,33 @@ Handlebars.registerPartial("input", inputTpl);
 const pathName = window.location.pathname;
 
 switch(pathName) {
-    case '/':
-        document.querySelector<HTMLDivElement>('#app')!.innerHTML = Handlebars.compile(loginPageTpl)({});
+    case "/": 
+     document.querySelector<HTMLDivElement>("#app")!.innerHTML = Handlebars.compile(startPageTpl)({});
         break;
-    case '/main': 
-        document.querySelector<HTMLDivElement>('#app')!.innerHTML = Handlebars.compile(mainPageTpl)({chats});
+    case "/login":
+        document.querySelector<HTMLDivElement>("#app")!.innerHTML = Handlebars.compile(loginPageTpl)({});
         break;
-    case '/registration': 
-        document.querySelector<HTMLDivElement>('#app')!.innerHTML = Handlebars.compile(registrationPageTpl)({});
+    case "/main": 
+        document.querySelector<HTMLDivElement>("#app")!.innerHTML = Handlebars.compile(mainPageTpl)({chats});
         break;
-    case '/profile':
-        document.querySelector<HTMLDivElement>('#app')!.innerHTML = Handlebars.compile(profilePageTpl )({title: "Вадим", name: "Vadim", surname: "Petrov", phone: "+9647", email: "123@fgy.yu"});
+    case "/registration": 
+        document.querySelector<HTMLDivElement>("#app")!.innerHTML = Handlebars.compile(registrationPageTpl)({});
         break;
-    case '/profile-change':
-        document.querySelector<HTMLDivElement>('#app')!.innerHTML = Handlebars.compile(profileChangePageTpl)({title: "Вадим", name: "Vadim", surname: "Petrov", phone: "+9647", email: "123@fgy.yu"});
+    case "/profile":
+        document.querySelector<HTMLDivElement>("#app")!.innerHTML = Handlebars.compile(profilePageTpl )({title: "Вадим", name: "Vadim", surname: "Petrov", phone: "+9647", email: "123@fgy.yu"});
         break;
-    case '/password-change':
-        document.querySelector<HTMLDivElement>('#app')!.innerHTML = Handlebars.compile(passwordChangePageTpl)({title: "Вадим", name: "Vadim", surname: "Petrov", phone: "+9647", email: "123@fgy.yu"});
+    case "/profile-change":
+        document.querySelector<HTMLDivElement>("#app")!.innerHTML = Handlebars.compile(profileChangePageTpl)({title: "Вадим", name: "Vadim", surname: "Petrov", phone: "+9647", email: "123@fgy.yu"});
         break;
-    case '/500':
-        document.querySelector<HTMLDivElement>('#app')!.innerHTML = Handlebars.compile(errorPageTpl)({});
+    case "/password-change":
+        document.querySelector<HTMLDivElement>("#app")!.innerHTML = Handlebars.compile(passwordChangePageTpl)({title: "Вадим", name: "Vadim", surname: "Petrov", phone: "+9647", email: "123@fgy.yu"});
+        break;
+    case "/500":
+        document.querySelector<HTMLDivElement>("#app")!.innerHTML = Handlebars.compile(errorPageTpl)({});
+        break;
+    case "/404":
+        document.querySelector<HTMLDivElement>("#app")!.innerHTML = Handlebars.compile(notFoundPageTpl)({});
         break;
     default: 
-       document.querySelector<HTMLDivElement>('#app')!.innerHTML = Handlebars.compile(notFoundPageTpl)({});
+       document.querySelector<HTMLDivElement>("#app")!.innerHTML = Handlebars.compile(notFoundPageTpl)({});
 }
