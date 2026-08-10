@@ -17,6 +17,6 @@ npm install
 npm run start
 ```
 Проект будет доступен по адресу http://localhost:3000/
-ссылка на развёрнутый в Netlify проект https://zefir-chat.netlify.app/
 
+ссылка на развёрнутый в Netlify проект https://zefir-chat.netlify.app/
 

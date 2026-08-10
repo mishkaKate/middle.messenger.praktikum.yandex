@@ -1,0 +1,47 @@
+.profile-page {
+    display: flex;
+
+    .profile {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+
+            & .avatar {
+                align-self: center;
+            }
+        }
+
+    .profile-title {
+        align-self: center;
+    }
+
+    .profile-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .profile-list-item {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border-color) ;
+    }
+
+    .profile-a {
+        margin-top: 12px;
+    }
+    
+}
+
+.profile-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+}
+
+.profile-page-footer {
+    display: flex;
+    flex-direction: column;
+    align-self: self-start;
+}
