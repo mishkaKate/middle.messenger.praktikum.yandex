@@ -1,13 +1,13 @@
-<div class="chat-item" data-id="{{id}}">
-  <div class="chat-item-block {{#if unreadCount}}chat-item__block--unread{{/if}}">
-   {{> avatar}}
-   <div class="chat-item-text">    
-      <h3 class="chat-item-name">
+<div class='chat-item' data-id='{{id}}'>
+  <div class='chat-item-block'>
+    {{{Avatar}}}
+    <div class='chat-item-text'>
+      <h3 class='chat-item-name'>
         {{title}}
-      </h3> 
-    <div class="chat-item-messege">
-      {{last_message.content}}
+      </h3>
+      <div class='chat-item-messege'>
+        {{content}}
+      </div>
     </div>
-   </div>
   </div>
 </div>

@@ -1,6 +1,20 @@
+.input-container {
+  position: relative;
+  display: flex;
+  padding-bottom: 12px;
+}
+
 .input {
-    border: none;
-    border-bottom: 1px solid var(--color-active);
-    height: 48px;
-    margin-top: 8px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-active);
+  height: 48px;
+  margin-top: 8px;
+}
+
+.validation-error {
+  color: var(--error-color);
+  font-size: 8px;
+  position: absolute;
+  bottom: 0;
 }

@@ -1,15 +1,28 @@
-<div class="chat-content">
-    <div class="chat-content-header">
-        {{> avatar size="m"}}
-        <h3>{{title}}</h3>
-    </div>
-    <div class="chat-content-body">
-        <div class="chat-content-messege"></div>
-        <div class="chat-content-messege-type-my"></div>
-    </div>
-    <div class="chat-content-footer">
-        <button class="chat-content-button-clip">{{> icon icon-source="clip"}}</button>
-        <input id="chat-content-input" name="chat-message-input" class="chat-content-input" type="text" placeholder="Сообщение">
-        <button class="chat-content-button-send">{{> icon icon-source="send"}}</button>
-    </div>
+<div class='chat-content'>
+  <div class='chat-content-header'>
+    {{{Avatar size='m'}}}
+    <h3>{{title}}</h3>
+  </div>
+  <div class='chat-content-body'>
+    {{{ChatContentMessege text='Hello!' time='12:33'}}}
+    {{{ChatContentMessege text='By!' time='12:35' modificator='my'}}}
+  </div>
+  <div class='chat-content-footer'>
+    <button class='chat-content-button chat-content-button-clip'>
+      {{{Icon source='clip'}}}
+    </button>
+    {{{Input
+    mixin='chat-content-input'
+    ref='input'
+    id='chat-content-input'
+    name='message'
+    class='chat-content-input'
+    type='text'
+    placeholder='Сообщение'
+    validationRule='^.+$ '
+    }}}
+    <button id='chat-content-send' class='chat-content-button chat-content-button-send'>
+      {{{Icon source='send'}}}
+    </button>
+  </div>
 </div>

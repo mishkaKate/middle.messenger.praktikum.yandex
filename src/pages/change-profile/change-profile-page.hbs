@@ -1,14 +1,56 @@
-<main class="form-page">
-    <form class="form">
-        <h2 class="form-header">Изменить данные профиля</h2>
-        {{> input id="change-profile-emeil" name="email" placeholder="Почта" label="почта" type="email"}}
-        {{> input id="change-profile-login" name="login" placeholder="Логин" label="логин" type="text"}}
-        {{> input id="change-profile-name" name="first_name" placeholder="Имя" label="имя" type="text"}}
-        {{> input id="change-profile-surname" name="second_name" placeholder="Фамилия" label="фамилия" type="text"}}
-        {{> input id="change-profile-chatname" name="display_name" placeholder="Фамилия" label="фамилия" type="text"}}
-        {{> input id="change-profile-phone" name="phone" placeholder="Телефон" label="телефон" type="tel"}}
-        <div class="form-footer">
-            {{> button role="main" text="Сохранить" href="/profile"}}
-        </div>
-    </form>
+<main class='form-page'>
+  <form class='form'>
+    <h2 class='form-header'>Изменить данные профиля</h2>
+    {{{Input
+    id='change-profile-emeil'
+    name='email'
+    placeholder='Почта'
+    label='почта'
+    type='email'
+    validationRule='^[A-Za-z0-9_-]+@[A-Za-z]+\.[A-Za-z0-9_-]+$'
+    }}}
+    {{{Input
+    id='change-profile-login'
+    name='login'
+    placeholder='Логин'
+    label='логин'
+    type='text'
+    validationRule='^(?=.*[A-Za-z_-])[A-Za-z0-9_-]{3,20}$'
+    }}}
+    {{{Input
+    id='change-profile-name'
+    name='first_name'
+    placeholder='Имя'
+    label='имя'
+    type='text'
+    validationRule='^[A-ZA-ЯЁ][a-za-яё-]*$'
+    }}}
+    {{{Input
+    id='change-profile-surname'
+    name='second_name'
+    placeholder='Фамилия'
+    label='фамилия'
+    type='text'
+    validationRule='^[A-ZA-ЯЁ][a-za-яё-]*$'
+    }}}
+    {{{Input
+    id='change-profile-chatname'
+    name='display_name'
+    placeholder='Фамилия'
+    label='фамилия'
+    type='text'
+    validationRule='^[A-ZA-ЯЁ][a-za-яё-]*$'
+    }}}
+    {{{Input
+    id='change-profile-phone'
+    name='phone'
+    placeholder='Телефон'
+    label='телефон'
+    type='tel'
+    validationRule='^(?=.{10,15}$)\+?[0-9]+$'
+    }}}
+    <div class='form-footer'>
+      {{{Button type='submit' role='main' text='Сохранить'}}}
+    </div>
+  </form>
 </main>

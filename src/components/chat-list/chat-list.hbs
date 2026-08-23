@@ -1,5 +1,5 @@
- <div class="chat-list">
+<div class='chat-list'>
   {{#each chats}}
-    {{> chat-item}}
+  {{{ChatListItem title=title content=last_message.content}}}
   {{/each}}
- </div>
+</div>

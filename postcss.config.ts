@@ -1,7 +1,7 @@
 export default {
   plugins: {
     'postcss-css-variables': {},
-    'postcss-import': {}, 
+    'postcss-import': {},
     'postcss-nesting': {},
   },
 };
