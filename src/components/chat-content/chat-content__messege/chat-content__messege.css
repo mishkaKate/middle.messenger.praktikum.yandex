@@ -1,0 +1,23 @@
+.chat-content-messege {
+  position: relative;
+  display: flex;
+  background-color: var(--bg-color);
+  padding: 8px 12px 18px;
+  margin: 12px 8px;
+  max-width: 75%;
+  border-radius: 2px 8px 8px;
+}
+
+.chat-content-messege-my {
+  justify-content: flex-end;
+  align-self: flex-end;
+  background-color: var(--bg-color-active);
+  border-radius: 8px 8px 2px;
+}
+
+.chat-content-messege-time {
+  position: absolute;
+  font-size: 9px;
+  bottom: 6px;
+  right: 6px;
+}

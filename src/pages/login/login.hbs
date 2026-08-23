@@ -1,0 +1,28 @@
+<div class='form-page'>
+  <form class='form'>
+    <h2 class='form-header'>Вход</h2>
+    {{{Input
+    name='login'
+    ref='login'
+    id='enter-form-login'
+    placeholder='Логин'
+    label='логин'
+    type='text'
+    validationRule='^(?=.*[A-Za-z_-])[A-Za-z0-9_-]{3,20}$'
+    }}}
+    {{{Input
+    name='password'
+    ref='password'
+    id='enter-form-parrword'
+    placeholder='Пароль'
+    label='пароль'
+    type='password'
+    validationRule='^(?=.*[A-Z])(?=.*\d)[A-Za-z0-9_-]{8,40}$'
+    }}}
+
+    <div class='form-footer'>
+      {{{Button type='submit' role='main' text='Авторизоваться'}}}
+      {{{Button text='Нет аккаунта?' href='/registration'}}}
+    </div>
+  </form>
+</div>
