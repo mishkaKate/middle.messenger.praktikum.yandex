@@ -21,13 +21,19 @@ import { ChatContentMessege } from './components/chat-content/chat-content__mess
 import { Form } from './components/form/form.ts';
 import { Error } from './components/error/error.ts';
 import { Icon } from './components/icon/icon.ts';
+import { InputImage } from './components/input/input-image.ts';
+import { ChatContentSendForm } from './components/chat-content/chat-content__send-form/chat-content__send-form.ts';
+import { Link } from './components/link/link.ts';
 
 registerComponent(Error);
 registerComponent(Icon);
 registerComponent(Avatar);
+registerComponent(Link);
 registerComponent(Button);
 registerComponent(Input);
+registerComponent(InputImage);
 registerComponent(SearchInput);
+registerComponent(ChatContentSendForm);
 registerComponent(ChatContent);
 registerComponent(ChatList);
 registerComponent(ChatListItem);
@@ -39,74 +45,125 @@ Handlebars.registerPartial('icon', iconTpl);
 console.log(window.location.pathname);
 const pathName = window.location.pathname;
 
-const mp = new MainPage({ chats });
-const registartionPage = new RegistrationPage();
-const profilePage = new ProfilePage();
-const loginPage = new LoginPage();
-const changePasswordPage = new ChangePasswordPage();
-const chanheProfilePage = new ChangeProfilePage();
-const notFoundPage = new ErrorPage({
-  messege: '404 Извините, такой страницы нет',
-});
-const errorPage = new ErrorPage({ messege: 'Что-то пошло не так' });
+let mainPage;
+let registartionPage;
+let profilePage;
+let loginPage;
+let changePasswordPage;
+let changeProfilePage;
+let notFoundPage;
+let errorPage;
 
-const mpElement = mp.element();
-const registartionElement = registartionPage.element();
-const profileElement = profilePage.element();
-const loginElement = loginPage.element();
-const changePasswordElement = changePasswordPage.element();
-const chanheProfileElement = chanheProfilePage.element();
-const notFoundElement = notFoundPage.element();
-const errorElement = errorPage.element();
+let mainPageElement;
+let registartionElement;
+let profileElement;
+let loginElement;
+let changePasswordElement;
+let changeProfileElement;
+let notFoundElement;
+let errorElement;
 
-if (
-  !loginElement ||
-  !mpElement ||
-  !registartionElement ||
-  !profileElement ||
-  !changePasswordElement ||
-  !chanheProfileElement ||
-  !errorElement ||
-  !notFoundElement
-) {
-  document.querySelector<HTMLDivElement>('#app')!.innerText = 'Error';
-} else {
-  switch (pathName) {
-    case '/':
-      document.querySelector<HTMLDivElement>('#app')!.innerHTML =
-        Handlebars.compile(startPageTpl)({});
-      break;
-    case '/login':
+switch (pathName) {
+  case '/':
+    document.querySelector<HTMLDivElement>('#app')!.innerHTML =
+      Handlebars.compile(startPageTpl)({});
+    break;
+  case '/login':
+    if (!loginPage) {
+      loginPage = new LoginPage();
+      loginElement = loginPage.element();
+    }
+
+    if (loginElement) {
       document.body.appendChild(loginElement);
-      break;
-    case '/main':
-      document.body.appendChild(mpElement);
-      break;
-    case '/registration':
+    }
+
+    break;
+  case '/main':
+    if (!mainPage) {
+      mainPage = new MainPage({ chats });
+      mainPageElement = mainPage.element();
+    }
+
+    if (mainPageElement) {
+      document.body.appendChild(mainPageElement);
+    }
+
+    break;
+  case '/registration':
+    if (!registartionPage) {
+      registartionPage = new RegistrationPage();
+      registartionElement = registartionPage.element();
+    }
+
+    if (registartionElement) {
       document.body.appendChild(registartionElement);
-      break;
-    case '/profile':
+    }
+
+    break;
+  case '/profile':
+    if (!profilePage) {
+      profilePage = new ProfilePage({ name: 'Фёдор', surname: 'Конюхов', phone: '+123456789', email: 'konfed@er.fg', avatar: 'https://avatars.mds.yandex.net/i?id=f58facbd6a7c5069025bae76110e191fa600422c-5233451-images-thumbs&n=13' });
+      profileElement = profilePage.element();
+    }
+
+    if (profileElement) {
       document.body.appendChild(profileElement);
-      break;
-    case '/profile-change':
-      document.body.appendChild(chanheProfileElement);
-      break;
-    case '/password-change':
+    }
+
+    break;
+  case '/profile-change':
+    if (!changeProfilePage) {
+      changeProfilePage = new ChangeProfilePage();
+      changeProfileElement = changeProfilePage.element();
+    }
+
+    if (changeProfileElement) {
+      document.body.appendChild(changeProfileElement);
+    }
+
+    break;
+  case '/password-change':
+    if (!changePasswordPage) {
+      changePasswordPage = new ChangePasswordPage();
+      changePasswordElement = changePasswordPage.element();
+    }
+
+    if (changePasswordElement) {
       document.body.appendChild(changePasswordElement);
-      break;
-    case '/500':
+    }
+
+    break;
+  case '/500':
+    if (!errorPage) {
+      errorPage = new ErrorPage({ messege: 'Что-то пошло не так' });
+      errorElement = errorPage.element();
+    }
+    if (errorElement) {
       document.body.appendChild(errorElement);
-      break;
-    case '/404':
+    }
+    break;
+  case '/404':
+    if (!notFoundPage) {
+      notFoundPage = new ErrorPage({
+        messege: '404 Извините, такой страницы нет',
+      });
+      notFoundElement = notFoundPage.element();
+    }
+
+    if (notFoundElement) {
       document.body.appendChild(notFoundElement);
-      break;
-    default:
-      document.body.appendChild(notFoundElement);
-  }
+
+    }
+    break;
+  default:
+    if (!errorPage) {
+      errorPage = new ErrorPage({ messege: 'Что-то пошло не так' });
+      errorElement = errorPage.element();
+    }
+    if (errorElement) {
+      document.body.appendChild(errorElement);
+    }
+    break;
 }
-
-
-
-
-
 

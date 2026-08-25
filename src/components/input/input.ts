@@ -7,7 +7,7 @@ type Props = BlockOwnProps & {
   type: string;
   name: string;
   id: string;
-  validationRule: 'string';
+  validationRule: string;
 };
 
 export class Input extends Block<Props> {
@@ -40,6 +40,14 @@ export class Input extends Block<Props> {
     });
 
     return result;
+  }
+
+  setError(text: string) {
+    Array.from(this.children).forEach((element) => {
+      if (element instanceof Error) {
+        element.setProps({ text });
+      }
+    });
   }
 
   protected events = {

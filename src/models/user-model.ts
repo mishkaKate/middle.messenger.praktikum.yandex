@@ -8,21 +8,25 @@ export type UserProfile = {
   phone: string;
   password: string;
 };
+export type ChangePasswordData = {
+  login: string;
+  old_password: string;
+  new_password: string;
+  new_password_more: string;
+}
 
 export function createUser(user: UserProfile) {
-  console.log(`Create user ${JSON.stringify(user)} `);
+  console.log('Create user ', user);
 }
 
 export function loginUser(user: User) {
-  console.log(`Login user login ${user.login} and password ${user.password} `);
+  console.log('Login user', user);
 }
 
-export function changeUserPassword(user: User) {
-  console.log(`Change user password with ${JSON.stringify(user)} `);
+export function changeUserPassword(data: ChangePasswordData) {
+  console.log('Change user password with data', data);
 }
 
 export function changeUserProfile(profile: UserProfile) {
-  console.log(
-    `Change user ${profile.login} profile with ${JSON.stringify(profile)} `
-  );
+  console.log('Change user profile with data', profile);
 }

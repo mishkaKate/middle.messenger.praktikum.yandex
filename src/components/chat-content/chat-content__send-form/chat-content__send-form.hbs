@@ -1,0 +1,18 @@
+<form class='chat-content-footer'>
+    <button class='chat-content-button chat-content-button-clip'>
+        {{{Icon source='clip'}}}
+    </button>
+    {{{Input
+    mixin='chat-content-input'
+    ref='input'
+    id='chat-content-input'
+    name='messege'
+    class='chat-content-input'
+    type='text'
+    placeholder='Сообщение'
+    validationRule='^.+$'
+    }}}
+    <button type="submit" id='chat-content-send' class='chat-content-button chat-content-button-send'>
+        {{{Icon source='send'}}}
+    </button>
+    <form>

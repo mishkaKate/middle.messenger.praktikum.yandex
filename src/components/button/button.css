@@ -4,6 +4,7 @@
   border-radius: 8px;
   color: var(--color-active);
   background: transparent;
+  cursor: pointer;
 }
 
 .button-role-main {

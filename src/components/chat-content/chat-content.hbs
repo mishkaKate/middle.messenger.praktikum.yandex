@@ -7,22 +7,5 @@
     {{{ChatContentMessege text='Hello!' time='12:33'}}}
     {{{ChatContentMessege text='By!' time='12:35' modificator='my'}}}
   </div>
-  <div class='chat-content-footer'>
-    <button class='chat-content-button chat-content-button-clip'>
-      {{{Icon source='clip'}}}
-    </button>
-    {{{Input
-    mixin='chat-content-input'
-    ref='input'
-    id='chat-content-input'
-    name='message'
-    class='chat-content-input'
-    type='text'
-    placeholder='Сообщение'
-    validationRule='^.+$ '
-    }}}
-    <button id='chat-content-send' class='chat-content-button chat-content-button-send'>
-      {{{Icon source='send'}}}
-    </button>
-  </div>
+  {{{ChatContentSendForm}}}
 </div>

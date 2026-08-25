@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
+    "type-check": "tsc --noEmit",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "lint": "eslint .",
+    "lint:css": "stylelint **/*.css",
     "prebuild": "tsc --noEmit",
     "build": "npm run prebuild && vite build",
     "preview": "vite preview"

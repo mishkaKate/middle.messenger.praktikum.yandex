@@ -1,0 +1,8 @@
+<div class='input-image-container {{mixin}}-container'>
+    <label class="input-image-label" for={{id}}>
+        <img alt='аватар' src='/public/favicon.svg' alt='avatar' />
+    </label>
+    <input ref="inputImage" class="input-image {{mixin}}" type="file" name={{name}} id={{id}}
+        accept="image/png, image/jpeg" />
+    {{{Error text='' ref='error'}}}
+</div>
