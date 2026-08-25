@@ -11,9 +11,12 @@ body {
     margin-bottom: 18px;
   }
 
-  & .profile-button {
+  & .profile-link {
     border: none;
     background: transparent;
+    text-decoration: none;
+    font-size: 14px;
+    padding-right: 8px;
   }
 }
 

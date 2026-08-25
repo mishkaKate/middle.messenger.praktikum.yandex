@@ -39,6 +39,7 @@
   }
 
   & .chat-content-input {
+    box-sizing: border-box;
     background-color: var(--bg-dark);
     border: none;
     border-radius: 30px;

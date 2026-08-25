@@ -1,5 +1,5 @@
 <main class='profile-page'>
-  {{{Button href='/main' role='back' icon-source='back'}}}
+  {{{Button href='/main' role='back' icon-source='back' type='button'}}}
   <div class='profile-page-content'>
     <div class='profile'>
       {{{Avatar size='l'}}}
@@ -23,8 +23,8 @@
         </li>
       </ul>
       <footer class='profile-page-footer'>
-        <a class='profile-a' href='/profile-change'>Изменить профиль</a>
-        <a class='profile-a' href='/password-change'>Изменить пароль</a>
+        {{{Link href='/profile-change' text='Изменить профиль'}}}
+        {{{Link href='/password-change' text='Изменить пароль'}}}
       </footer>
     </div>
   </div>
