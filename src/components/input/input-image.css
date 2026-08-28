@@ -1,0 +1,21 @@
+.input-image-container {
+    position: relative;
+    align-self: center;
+}
+
+.input-image {
+    opacity: 0;
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+}
+
+.input-image-label {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}

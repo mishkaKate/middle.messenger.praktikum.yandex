@@ -1,1 +1,5 @@
-<input class="input" placeholder={{placeholder}} type={{type}} name={{name}} id={{id}}>
+<div class='input-container {{mixin}}-container'>
+  <input ref='input' class='input {{mixin}}' placeholder={{placeholder}} type={{type}} name={{name}} id={{id}}
+    accept={{accept}} />
+  {{{Error text='' ref='error'}}}
+</div>

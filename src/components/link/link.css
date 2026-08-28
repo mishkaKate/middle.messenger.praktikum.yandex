@@ -1,0 +1,8 @@
+.link {
+    font-size: 14px;
+    text-decoration: none;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

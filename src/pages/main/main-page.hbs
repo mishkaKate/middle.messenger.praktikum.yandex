@@ -1,12 +1,10 @@
-<main class="main-page">
-    <aside class="navigation">
-        <div class="profile">
-            <button class="profile-button">
-                <a href="/profile">Профиль</a>{{> icon icon-source="right"}}
-            </button>
-        </div>
-        {{> search-input}}
-        {{> chat-list}}
-    </aside>
-    {{> chat-content title="Chat name"}}
+<main class='main-page'>
+  <nav class='navigation'>
+    <div class='profile'>
+      <a class='profile-link' href='/profile'>Профиль</a>{{{Icon source='right'}}}
+    </div>
+    {{{SearchInput}}}
+    {{{ChatList chats=chats}}}
+  </nav>
+  {{{ChatContent title='Chat name'}}}
 </main>

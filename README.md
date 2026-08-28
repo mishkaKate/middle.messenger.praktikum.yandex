@@ -1,4 +1,4 @@
-# Чат на Vanilla JS 
+# Чат на Vanilla JS
 
 Учебный проект.
 
@@ -16,7 +16,7 @@ cd repo
 npm install
 npm run start
 ```
+
 Проект будет доступен по адресу http://localhost:3000/
 
 ссылка на развёрнутый в Netlify проект https://zefir-chat.netlify.app/
-

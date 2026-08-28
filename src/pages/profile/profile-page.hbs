@@ -1,27 +1,31 @@
-<main class="profile-page">
-    {{> button href="/main" role="back" icon-source="back"}}
-    <div class="profile-page-content">
-        <div class="profile">
-        {{> avatar size="l"}}
-        <h1 class="profile-title">{{title}}</h1>
-        <ul class="profile-list">
-            <li class="profile-list-item">
-                <span>Имя</span> <span>{{name}}</span>
-            </li>
-            <li class="profile-list-item">
-                <span>Фамилия</span> <span>{{surname}}</span>
-            </li>
-            <li class="profile-list-item">
-                <span>Телефон</span> <span>{{phone}}</span>
-            </li>
-            <li class="profile-list-item">
-                <span>Почта</span> <span>{{email}}</span>
-            </li>
-        </ul>
-        <footer class="profile-page-footer">
-            <a class="profile-a" href="/profile-change">Изменить профиль</a>
-            <a class="profile-a" href="/password-change">Изменить пароль</a>
-        </footer> 
-        </div>    
+<main class='profile-page'>
+  {{{Button href='/main' role='back' icon-source='back' type='button'}}}
+  <div class='profile-page-content'>
+    <div class='profile'>
+      {{{Avatar size='l'}}}
+      <h1 class='profile-title'>{{title}}</h1>
+      <ul class='profile-list'>
+        <li class='profile-list-item'>
+          <span>Имя</span>
+          <span>{{name}}</span>
+        </li>
+        <li class='profile-list-item'>
+          <span>Фамилия</span>
+          <span>{{surname}}</span>
+        </li>
+        <li class='profile-list-item'>
+          <span>Телефон</span>
+          <span>{{phone}}</span>
+        </li>
+        <li class='profile-list-item'>
+          <span>Почта</span>
+          <span>{{email}}</span>
+        </li>
+      </ul>
+      <footer class='profile-page-footer'>
+        {{{Link href='/profile-change' text='Изменить профиль'}}}
+        {{{Link href='/password-change' text='Изменить пароль'}}}
+      </footer>
     </div>
+  </div>
 </main>
