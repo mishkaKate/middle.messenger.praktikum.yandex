@@ -1,0 +1,10 @@
+.add-user-dialog {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 6px 0 rgb(0 0 0 / 14%);
+}
+
+.add-user-dialog-input {
+  height: 24px;
+  margin-bottom: 16px;
+}

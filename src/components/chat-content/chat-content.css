@@ -15,6 +15,17 @@
   & .avatar {
     margin-right: 12px;
   }
+
+  & .chat-content-header-breadcrumbs {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    & .icon {
+      pointer-events: none;
+    }
+  }
 }
 
 .chat-content-footer {

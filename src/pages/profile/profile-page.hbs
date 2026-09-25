@@ -1,8 +1,8 @@
 <main class='profile-page'>
-  {{{Button href='/main' role='back' icon-source='back' type='button'}}}
+  {{{Button role='back' icon-source='back' type='button' id='chats-button'}}}
   <div class='profile-page-content'>
     <div class='profile'>
-      {{{Avatar size='l'}}}
+      {{{InputImage name='avatar' id='avatar' label='Изменить аватар' src=avatar}}}
       <h1 class='profile-title'>{{title}}</h1>
       <ul class='profile-list'>
         <li class='profile-list-item'>
@@ -23,8 +23,9 @@
         </li>
       </ul>
       <footer class='profile-page-footer'>
-        {{{Link href='/profile-change' text='Изменить профиль'}}}
-        {{{Link href='/password-change' text='Изменить пароль'}}}
+        {{{Button text='Изменить профиль' type='button' id='profile-change'}}}
+        {{{Button text='Изменить пароль' type='button' id='password-change'}}}
+        {{{Button text='Выйти' role='attantion' type='button' id='logout-button'}}}
       </footer>
     </div>
   </div>

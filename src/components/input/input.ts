@@ -3,11 +3,11 @@ import { Error } from '../error/error';
 import inputTmpl from './input.hbs?raw';
 
 type Props = BlockOwnProps & {
-  placeholder: string;
-  type: string;
-  name: string;
-  id: string;
-  validationRule: string;
+  placeholder?: string;
+  type?: string;
+  name?: string;
+  id?: string;
+  validationRule?: string;
 };
 
 export class Input extends Block<Props> {
@@ -15,7 +15,10 @@ export class Input extends Block<Props> {
   protected template = inputTmpl;
 
   validate() {
-    const regex = new RegExp(this.props.validationRule);
+    if (typeof this.props.validationRule !== 'string') {
+      return true;
+    }
+    const regex = new RegExp(this?.props.validationRule);
     const element = this.element();
 
     if (!element || !(this.refs.input instanceof HTMLInputElement)) {
