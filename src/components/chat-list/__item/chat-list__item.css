@@ -1,9 +1,11 @@
 .chat-item {
+  cursor: pointer;
   height: 68px;
   padding: 8px;
   border-top: 1px solid var(--border-color);
 
   & .avatar {
+    pointer-events: none;
     margin-right: 12px;
   }
 }
@@ -17,6 +19,7 @@
 .chat-item-text {
   flex-grow: 0;
   min-width: 0;
+  pointer-events: none;
 }
 
 .chat-item-name {

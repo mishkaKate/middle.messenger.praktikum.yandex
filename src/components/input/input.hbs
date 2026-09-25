@@ -1,5 +1,9 @@
 <div class='input-container {{mixin}}-container'>
+  {{#if val}}
   <input ref='input' class='input {{mixin}}' placeholder={{placeholder}} type={{type}} name={{name}} id={{id}}
-    accept={{accept}} />
+    value={{val}} />
+  {{else}}
+  <input ref='input' class='input {{mixin}}' placeholder={{placeholder}} type={{type}} name={{name}} id={{id}} />
+  {{/if}}
   {{{Error text='' ref='error'}}}
 </div>

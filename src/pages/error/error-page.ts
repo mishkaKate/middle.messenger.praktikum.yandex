@@ -6,5 +6,6 @@ type Props = BlockOwnProps & {
 };
 
 export class ErrorPage extends Block<Props> {
+  static componentName = 'ErrorPage';
   protected template = tpl;
 }

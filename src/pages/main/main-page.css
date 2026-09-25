@@ -11,16 +11,27 @@ body {
     margin-bottom: 18px;
   }
 
-  & .profile-link {
+  & .profile-button {
     border: none;
     background: transparent;
     text-decoration: none;
     font-size: 14px;
     padding-right: 8px;
+    height: 24px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+    & .icon {
+      margin-left: 8px;
+    }
   }
 }
 
 .navigation {
+  position: relative;
   height: 100vh;
   box-sizing: border-box;
   width: 310px;
@@ -30,5 +41,16 @@ body {
 
   & .search {
     margin-bottom: 12px;
+  }
+
+  .add-chat-button {
+    position: absolute;
+    bottom: 24px;
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    left: 0;
+    height: 36px;
+    cursor: pointer;
   }
 }
