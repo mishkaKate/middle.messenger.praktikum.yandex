@@ -8,6 +8,10 @@ type RequestOptions = {
     responseType?: XMLHttpRequestResponseType;
 };
 
+type ApiError = {
+    request: XMLHttpRequest
+}
+
 const METHODS = {
     GET: 'GET',
     POST: 'POST',
@@ -16,6 +20,10 @@ const METHODS = {
 };
 
 const host = 'https://ya-praktikum.tech/api/v2/';
+
+export function isApiError(error: unknown): error is ApiError {
+    return (error && typeof error === 'object' && 'request' in error && 'status' in error && 'response' in error) as boolean;
+}
 
 function queryStringify(data: Indexed<number | string | boolean>) {
     if (typeof data !== 'object' || data === null) {
