@@ -52,9 +52,9 @@ export abstract class Block<Props extends BlockOwnProps> {
     }
   }
 
-  protected componentDidMount() { }
+  protected componentDidMount() {}
 
-  protected componentWillUnmount() { }
+  protected componentWillUnmount() {}
 
   private mountComponent() {
     this.attachListeners();

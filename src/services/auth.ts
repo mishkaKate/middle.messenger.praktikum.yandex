@@ -1,3 +1,4 @@
+import { errorHandlerDefault } from '../decorators/handle-error';
 import HTTPTransport from '../http/http-transport';
 import store from '../store';
 import type { Indexed } from '../utils/helpers';
@@ -24,33 +25,49 @@ export type ChangePasswordData = {
 };
 
 export async function signin(data: Indexed) {
-  await loginAPIInstance.post('auth/signin', { data });
+  try {
+    await loginAPIInstance.post('auth/signin', { data });
 
-  return loginAPIInstance.get('auth/user');
+    return loginAPIInstance.get('auth/user');
+  } catch (e) {
+    errorHandlerDefault(e);
+  }
 }
 
 export function getUser() {
-  return loginAPIInstance.get('auth/user');
+  try {
+    return loginAPIInstance.get('auth/user');
+  } catch (e) {
+    errorHandlerDefault(e);
+  }
 }
 
 export async function logout() {
-  await loginAPIInstance.post('auth/logout');
+  try {
+    await loginAPIInstance.post('auth/logout');
 
-  store.setState('userProfile', {});
-  store.setState('chats', []);
+    store.setState('userProfile', {});
+    store.setState('chats', []);
+  } catch (e) {
+    errorHandlerDefault(e);
+  }
 }
 
 export async function checkUser() {
-  if (!store.getState().userProfile) {
-    const user = await getUser();
+  try {
+    if (!store.getState().userProfile) {
+      const user = await getUser();
 
-    if (user) {
-      store.setState('userProfile', user);
-      return true;
-    } else {
-      return false;
+      if (user) {
+        store.setState('userProfile', user);
+        return true;
+      } else {
+        return false;
+      }
     }
-  }
 
-  return true;
+    return true;
+  } catch (e) {
+    errorHandlerDefault(e);
+  }
 }

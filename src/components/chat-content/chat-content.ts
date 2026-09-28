@@ -1,5 +1,6 @@
 import type { State } from '../../store';
 import { connect } from '../../utils/connect';
+import { getImageSource } from '../../utils/helpers';
 import { Block, type BlockOwnProps } from '../block/block';
 import tmpl from './chat-content.hbs?raw';
 
@@ -16,7 +17,7 @@ class ChatContentCoponent extends Block<BlockOwnProps> {
 }
 
 export function mapStateToProps(state: State) {
-  const { activeChat, chats } = state;
+  const { activeChat, chats, activeChatUsers } = state;
 
   if (!chats) {
     return {};
@@ -30,6 +31,10 @@ export function mapStateToProps(state: State) {
 
   return {
     ...active,
+    avatar: active?.avatar
+      ? getImageSource(active.avatar)
+      : '/public/favicon.svg',
+    users: activeChatUsers,
   };
 }
 

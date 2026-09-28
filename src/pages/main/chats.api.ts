@@ -9,8 +9,8 @@ export class ChatsAPI extends BaseAPI {
     return (await chatAPIInstance.get('chats')) as Array<Indexed>;
   }
 
-  async create() {
-    return chatAPIInstance.post('chats', { data: { title: 'Новый чат' } });
+  async create(data: { name: string }) {
+    return chatAPIInstance.post('chats', { data: { title: data.name } });
   }
 
   async addUser(chatId: number, userId: number) {
@@ -29,5 +29,15 @@ export class ChatsAPI extends BaseAPI {
     return (await chatAPIInstance.post('user/search', {
       data: { login },
     })) as Array<Indexed>;
+  }
+
+  async setAvatar(data: FormData): Promise<Indexed> {
+    return (await chatAPIInstance.put('chats/avatar', {
+      data,
+    })) as Indexed;
+  }
+
+  async getUsers(id: number): Promise<Array<Indexed>> {
+    return (await chatAPIInstance.get(`chats/${id}/users`)) as Array<Indexed>;
   }
 }

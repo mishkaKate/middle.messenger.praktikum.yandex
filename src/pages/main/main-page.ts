@@ -27,8 +27,26 @@ export class MainPage extends Block<mainPageProps> {
         this.onProfileClick();
       }
 
-      if (e.target && e.target.id === 'add-chat-button') {
-        this.controller.addChat();
+      if (e.target?.parentElement?.id === 'chat-name-dialog') {
+        const input = document.getElementById(
+          'modal-input-chat-name-dialog'
+        ) as HTMLInputElement;
+        if (input.value) {
+          this.controller.addChat(input.value);
+        }
+      }
+    },
+    change: (e: Event) => {
+      if (!(e.target instanceof HTMLElement)) {
+        return;
+      }
+      if (e.target?.id === 'avatar') {
+        const form = document.getElementById('avatar-form');
+
+        if (form instanceof HTMLFormElement) {
+          const formData = new FormData(form);
+          this.controller.setChatAvatar(formData);
+        }
       }
     },
   };
