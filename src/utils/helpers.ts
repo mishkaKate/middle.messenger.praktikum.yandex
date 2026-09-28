@@ -9,7 +9,7 @@ export type Indexed<T = unknown> = {
   [k in string | symbol]: T;
 };
 export interface ComponentClass<P extends BlockProps> {
-  new(props: P): Block<P>;
+  new (props: P): Block<P>;
   componentName: string;
 }
 
@@ -109,11 +109,7 @@ export function merge(lhs: Indexed, rhs: Indexed): Indexed {
   return lhs;
 }
 
-export function set(
-  object: Indexed,
-  path: string,
-  value: unknown
-): Indexed {
+export function set(object: Indexed, path: string, value: unknown): Indexed {
   if (typeof object !== 'object') {
     return object || {};
   }

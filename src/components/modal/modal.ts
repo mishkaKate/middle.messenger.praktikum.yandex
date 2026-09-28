@@ -12,7 +12,7 @@ export class Modal extends Block<BlockOwnProps> {
       if (e instanceof PointerEvent && e.target instanceof HTMLElement) {
         if (e.target?.parentElement?.id === 'add-user-dialog') {
           const input = document.getElementById(
-            'user-login-input-add-user-dialog'
+            'modal-input-add-user-dialog'
           ) as HTMLInputElement;
 
           if (input?.value) {
@@ -22,7 +22,7 @@ export class Modal extends Block<BlockOwnProps> {
 
         if (e.target?.parentElement?.id === 'delete-user-dialog') {
           const input = document.getElementById(
-            'user-login-input-delete-user-dialog'
+            'modal-input-delete-user-dialog'
           ) as HTMLInputElement;
           if (input.value) {
             this.controller.deleteChatUser(input.value);

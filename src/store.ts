@@ -6,6 +6,7 @@ export type ProfileState = {
   id: number;
   first_name: string;
   second_name: string;
+  display_name: string;
   email: string;
   avatar: string;
   login: string;
@@ -14,12 +15,14 @@ export type ProfileState = {
 
 export type ChatItemState = {
   id: number;
+  avatar: string | null;
 };
 
 export type State = {
   userProfile?: ProfileState;
   chats?: Array<ChatItemState>;
   activeChat?: number;
+  activeChatUsers?: Array<{ login: string }>;
 };
 
 class Store {

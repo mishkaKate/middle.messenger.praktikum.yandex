@@ -59,12 +59,13 @@ class ProfilePageComponent extends Block<Props> {
 }
 
 export function mapUserToProps(state: State) {
-  const { first_name, second_name, email, phone, avatar, login } =
+  const { first_name, second_name, display_name, email, phone, avatar, login } =
     state.userProfile || {};
 
   return {
     name: first_name || '',
     surname: second_name || '',
+    displayName: display_name || '',
     email: email || '',
     phone: phone || '',
     avatar: avatar

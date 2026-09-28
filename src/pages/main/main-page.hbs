@@ -5,7 +5,8 @@
     </button>
     {{{SearchInput}}}
     {{{ChatList chats=chats}}}
-    <button class="add-chat-button" id="add-chat-button">Добавить новый</button>
+    <button class="add-chat-button" popovertarget="chat-name-dialog" id="add-chat-button">Добавить новый</button>
+    {{{Modal id='chat-name-dialog' text='Добавить' placeholder='Название чата'}}}
   </nav>
   {{{ChatContent title='Chat name'}}}
 </main>

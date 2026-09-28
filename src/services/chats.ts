@@ -12,6 +12,20 @@ export async function checkChats() {
     if (chats && chats.length) {
       store.setState('chats', chats);
       store.setState('activeChat', chats[0].id);
+
+      const users = await api.getUsers(chats[0].id as number);
+      console.log('users', users);
+      store.setState('activeChatUsers', users);
     }
+  }
+}
+
+export async function getChatUsers() {
+  const chatId = store.getState().activeChat;
+
+  if (chatId) {
+    const users = await api.getUsers(chatId);
+
+    store.setState('activeChatUsers', users);
   }
 }
