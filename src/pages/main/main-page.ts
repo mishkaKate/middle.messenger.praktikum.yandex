@@ -26,13 +26,23 @@ export class MainPage extends Block<mainPageProps> {
       if (e.target.id === 'profile-button') {
         this.onProfileClick();
       }
-
-      if (e.target?.parentElement?.id === 'chat-name-dialog') {
+    },
+    submit: (e: Event) => {
+      e.preventDefault();
+      if (
+        e.target instanceof HTMLFormElement &&
+        e.target.id === 'chat-name-dialog-form'
+      ) {
         const input = document.getElementById(
           'modal-input-chat-name-dialog'
         ) as HTMLInputElement;
         if (input.value) {
           this.controller.addChat(input.value);
+
+          const dialog = document.getElementById(
+            'chat-name-dialog'
+          ) as HTMLDialogElement;
+          dialog.hidePopover();
         }
       }
     },
