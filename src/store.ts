@@ -1,4 +1,4 @@
-import { merge, set } from './utils/helpers';
+import { set, type Indexed } from './utils/helpers';
 
 type Listener = () => void;
 
@@ -23,7 +23,7 @@ export type State = {
   chats?: Array<ChatItemState>;
   activeChat?: number;
   activeChatUsers?: Array<{ login: string }>;
-};
+} & Indexed;
 
 class Store {
   private state: State = {};
@@ -34,7 +34,11 @@ class Store {
   }
 
   public setState(path: string, value: unknown) {
-    this.state = merge(this.state, set({}, path, value));
+    if (this.state[path]) {
+      this.state[path] = value;
+    } else {
+      this.state = set(this.state, path, value);
+    }
 
     this.emit();
   }

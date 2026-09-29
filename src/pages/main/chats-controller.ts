@@ -14,21 +14,21 @@ export class ChatsController {
 
   @handleError(errorHandlerDefault)
   public async addChat(name: string) {
-    const chatId = await api.create({ name });
+    const chat = await api.create({ name });
 
-    if (chatId) {
+    if (chat) {
       const chats = await this.getChats();
 
       store.setState('chats', chats);
+      store.setState('activeChat', chat.id);
+      store.setState('activeChatUsers', [{ ...store.getState().userProfile }]);
     }
   }
 
   @handleError(errorHandlerDefault)
   public async setActiveChat(id: string) {
     store.setState('activeChat', id);
-    const users = await api.getUsers(Number.parseInt(id));
-    console.log('users1', users);
-    store.setState('activeChatUsers', users);
+    this.updateChatUsers();
   }
 
   @handleError(errorHandlerDefault)
@@ -42,12 +42,18 @@ export class ChatsController {
 
     if (users && users.length) {
       await api.addUser(activeChat, users[0].id as number);
+      this.updateChatUsers();
     }
   }
 
   @handleError(errorHandlerDefault)
   public async deleteChatUser(login: string) {
     const activeChat = store.getState().activeChat;
+    const myLogin = store.getState().userProfile?.login;
+
+    if (myLogin === login) {
+      return; //todo реализовать удаление чата через кнопку или если в нем не осталось участников
+    }
 
     if (!activeChat) {
       return;
@@ -56,6 +62,7 @@ export class ChatsController {
 
     if (users && users.length) {
       await api.deleteUser(activeChat, users[0].id as number);
+      this.updateChatUsers();
     }
   }
 
@@ -80,5 +87,16 @@ export class ChatsController {
     });
 
     store.setState('chats', nextChats);
+  }
+
+  @handleError(errorHandlerDefault)
+  async updateChatUsers() {
+    const activeChat = store.getState().activeChat;
+
+    if (!activeChat) {
+      return;
+    }
+    const chatUsers = await api.getUsers(activeChat as number);
+    store.setState('activeChatUsers', chatUsers);
   }
 }
