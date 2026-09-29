@@ -29,7 +29,10 @@ export class MainPage extends Block<mainPageProps> {
     },
     submit: (e: Event) => {
       e.preventDefault();
-      if (e.target instanceof HTMLFormElement && e.target.id === 'chat-name-dialog-form') {
+      if (
+        e.target instanceof HTMLFormElement &&
+        e.target.id === 'chat-name-dialog-form'
+      ) {
         const input = document.getElementById(
           'modal-input-chat-name-dialog'
         ) as HTMLInputElement;
@@ -39,7 +42,7 @@ export class MainPage extends Block<mainPageProps> {
           const dialog = document.getElementById(
             'chat-name-dialog'
           ) as HTMLDialogElement;
-          dialog.hidePopover()
+          dialog.hidePopover();
         }
       }
     },
