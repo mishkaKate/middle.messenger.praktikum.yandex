@@ -14,7 +14,6 @@ export async function checkChats() {
       store.setState('activeChat', chats[0].id);
 
       const users = await api.getUsers(chats[0].id as number);
-      console.log('users', users);
       store.setState('activeChatUsers', users);
     }
   }

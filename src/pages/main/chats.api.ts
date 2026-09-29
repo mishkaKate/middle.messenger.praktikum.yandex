@@ -9,8 +9,10 @@ export class ChatsAPI extends BaseAPI {
     return (await chatAPIInstance.get('chats')) as Array<Indexed>;
   }
 
-  async create(data: { name: string }) {
-    return chatAPIInstance.post('chats', { data: { title: data.name } });
+  async create(data: { name: string }): Promise<Indexed> {
+    return (await chatAPIInstance.post('chats', {
+      data: { title: data.name },
+    })) as Indexed;
   }
 
   async addUser(chatId: number, userId: number) {
