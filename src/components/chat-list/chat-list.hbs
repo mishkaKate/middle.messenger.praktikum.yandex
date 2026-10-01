@@ -1,5 +1,7 @@
-<ul class='chat-list'>
-  {{#each chats}}
-  {{{ChatListItem title=title content=last_message.content}}}
-  {{/each}}
-  </div>
+<div class="chat-list-wrapper">
+  <ul class='chat-list'>
+    {{#each chats}}
+    {{{ChatListItem avatar=avatar title=title content=last_message.content id=id}}}
+    {{/each}}
+  </ul>
+</div>

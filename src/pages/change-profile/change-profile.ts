@@ -1,11 +1,20 @@
 import { Form } from '../../components/form/form';
-import { changeUserProfile, type UserProfile } from '../../models/user-model';
+import type { UserProfile } from '../../services/auth';
+import { connect } from '../../utils/connect';
+import { mapUserToProps } from '../profile/profile-page';
 import tpl from './change-profile-page.hbs?raw';
+import { ChangeProfileController } from './change-profile.controller';
 
-export class ChangeProfilePage extends Form<UserProfile> {
+class ChangeProfilePageComponent extends Form<UserProfile> {
   protected template = tpl;
+  protected controller = new ChangeProfileController();
 
   onSubmit = (res: UserProfile) => {
-    changeUserProfile(res);
+    this.controller.updateProfile(res);
   };
 }
+
+export const ChangeProfilePage = connect(
+  ChangeProfilePageComponent,
+  mapUserToProps
+);

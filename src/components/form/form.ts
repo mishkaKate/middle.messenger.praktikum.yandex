@@ -3,13 +3,13 @@ import { Input } from '../input/input';
 import tmpl from './form.hbs?raw';
 
 type Props = BlockOwnProps & {
-  valid: boolean;
+  valid?: boolean;
 };
 
 export class Form<T> extends Block<Props> {
   static componentName = 'Form';
   protected template = tmpl;
-  onSubmit = (_result: T) => { };
+  onSubmit = (_result: T) => {};
   validate = () => {
     let isValid = true;
     const submitObject = {};
@@ -40,7 +40,7 @@ export class Form<T> extends Block<Props> {
     });
 
     return { isValid, submitObject };
-  }
+  };
 
   protected events = {
     submit: (e: Event) => {

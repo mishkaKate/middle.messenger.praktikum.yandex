@@ -6,12 +6,14 @@
 @import url('src/components/chat-content/chat-content.css');
 @import url('src/components//button/button.css');
 @import url('src/components/input/input.css');
-@import url("src/components/link/link.css");
+@import url('src/components/link/link.css');
 @import url('src/components/input/input-image.css');
 @import url('src/components/form/form.css');
 @import url('src/pages/profile/profile-page.css');
 @import url('src/pages/error/error-page.css');
 @import url('src/components/chat-content/chat-content__messege/chat-content__messege.css');
+@import url('src/components/popup/popup.css');
+@import url('src/components/modal/modal.css');
 
 @font-face {
   font-family: rushin;

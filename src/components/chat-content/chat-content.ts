@@ -1,7 +1,41 @@
+import type { State } from '../../store';
+import { connect } from '../../utils/connect';
+import { getImageSource } from '../../utils/helpers';
 import { Block, type BlockOwnProps } from '../block/block';
 import tmpl from './chat-content.hbs?raw';
 
-export class ChatContent extends Block<BlockOwnProps> {
+interface Props extends BlockOwnProps {
+  avatar?: string | null;
+}
+class ChatContentCoponent extends Block<BlockOwnProps> {
   static componentName = 'ChatContent';
   protected template = tmpl;
+
+  constructor(props: Props) {
+    super(props.avatar ? props : { ...props, avatar: './public/favicon.svg' });
+  }
 }
+
+export function mapStateToProps(state: State) {
+  const { activeChat, chats, activeChatUsers } = state;
+
+  if (!chats) {
+    return {};
+  }
+
+  if (!activeChat) {
+    return chats[0];
+  }
+
+  const active = chats.find((chat) => chat.id == activeChat);
+
+  return {
+    ...active,
+    avatar: active?.avatar
+      ? getImageSource(active.avatar)
+      : '/public/favicon.svg',
+    users: activeChatUsers,
+  };
+}
+
+export const ChatContent = connect<Props>(ChatContentCoponent, mapStateToProps);

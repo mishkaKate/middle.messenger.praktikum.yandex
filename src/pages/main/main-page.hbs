@@ -1,10 +1,12 @@
 <main class='main-page'>
   <nav class='navigation'>
-    <div class='profile'>
-      <a class='profile-link' href='/profile'>Профиль</a>{{{Icon source='right'}}}
-    </div>
+    <button class='profile-button' id="profile-button">
+      Профиль {{{Icon source='right'}}}
+    </button>
     {{{SearchInput}}}
     {{{ChatList chats=chats}}}
+    <button class="add-chat-button" popovertarget="chat-name-dialog" id="add-chat-button">Добавить новый</button>
+    {{{Modal id='chat-name-dialog' text='Добавить' placeholder='Название чата'}}}
   </nav>
   {{{ChatContent title='Chat name'}}}
 </main>

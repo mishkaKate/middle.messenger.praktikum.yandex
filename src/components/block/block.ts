@@ -3,7 +3,6 @@ import Handlebars from 'handlebars';
 type EventListType = Partial<
   Record<keyof HTMLElementEventMap, (e: Event) => void>
 >;
-
 export interface BlockOwnProps extends Record<string, unknown> {
   __children?: Array<{
     component: Block<Record<string, unknown>>;
@@ -11,6 +10,10 @@ export interface BlockOwnProps extends Record<string, unknown> {
   }>;
   __refs?: Record<string, Element>;
 }
+
+export type BlockProps = BlockOwnProps & { [key: string]: unknown };
+
+export type BlockWithStandartProps = Block<BlockOwnProps>;
 
 export abstract class Block<Props extends BlockOwnProps> {
   protected abstract template: string;
@@ -49,9 +52,9 @@ export abstract class Block<Props extends BlockOwnProps> {
     }
   }
 
-  protected componentDidMount() { }
+  protected componentDidMount() {}
 
-  protected componentWillUnmount() { }
+  protected componentWillUnmount() {}
 
   private mountComponent() {
     this.attachListeners();
@@ -72,6 +75,20 @@ export abstract class Block<Props extends BlockOwnProps> {
     }
 
     return this.domElement;
+  }
+
+  public show() {
+    this.render();
+  }
+
+  public hide() {
+    this.unmountComponent();
+
+    if (this.domElement) {
+      this.domElement.replaceWith('');
+    }
+
+    this.domElement = null;
   }
 
   protected render() {
@@ -120,5 +137,13 @@ export abstract class Block<Props extends BlockOwnProps> {
   public setProps(props: Partial<Props>) {
     this.props = { ...this.props, ...props, __children: [], __refs: {} };
     this.render();
+  }
+
+  public getTemplate(): string {
+    return this.template;
+  }
+
+  public getEvents(): EventListType {
+    return this.events;
   }
 }

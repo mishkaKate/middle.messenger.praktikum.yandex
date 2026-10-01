@@ -2,13 +2,8 @@
   "compilerOptions": {
     "target": "es2023",
     "module": "esnext",
-    "lib": [
-      "ES2023",
-      "DOM"
-    ],
-    "types": [
-      "vite/client"
-    ],
+    "lib": ["ES2023", "DOM"],
+    "types": ["vite/client"],
     "allowArbitraryExtensions": true,
     "skipLibCheck": true,
     "strict": true,
@@ -23,9 +18,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

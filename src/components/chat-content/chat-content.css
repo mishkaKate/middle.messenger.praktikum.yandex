@@ -12,8 +12,19 @@
   border-bottom: 1px solid var(--border-color);
   align-items: center;
 
-  & .avatar {
+  & #avatar-form {
     margin-right: 12px;
+  }
+
+  & .chat-content-header-breadcrumbs {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    & .icon {
+      pointer-events: none;
+    }
   }
 }
 

@@ -1,11 +1,16 @@
 <div class='chat-content'>
   <div class='chat-content-header'>
-    {{{Avatar size='m'}}}
+    {{{InputImage name='avatar' id='avatar' label='Изменить аватар чата' src=avatar}}}
     <h3>{{title}}</h3>
+    <button popovertarget="settings-dialog" class="chat-content-header-breadcrumbs">{{{Icon
+      source='breadcrums'}}}</button>
   </div>
   <div class='chat-content-body'>
     {{{ChatContentMessege text='Hello!' time='12:33'}}}
     {{{ChatContentMessege text='By!' time='12:35' modificator='my'}}}
   </div>
   {{{ChatContentSendForm}}}
+  {{{Popup}}}
+  {{{Modal id='add-user-dialog' text='Добавить' placeholder='Логин'}}}
+  {{{Modal withUsers='true' users=users id='delete-user-dialog' text='Удалить' placeholder='Логин'}}}
 </div>

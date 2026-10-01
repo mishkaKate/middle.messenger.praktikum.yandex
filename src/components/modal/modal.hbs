@@ -1,0 +1,16 @@
+<dialog id={{id}} class="modal add-user-dialog" popover>
+    <form class="modal-form" id="{{id}}-form">
+        {{#if withUsers}}
+        <span>Пользователи: </span>
+        <div class="login-list">
+            {{#each users}}
+            <span class="login-item">{{login}} </span>
+            {{/each}}
+        </div>
+        {{/if}}
+        <input class="add-user-dialog-input" placeholder={{placeholder}} type="text" id="modal-input-{{id}}">
+        <button class="button button-role-main" type="submit" id='dialog-button' popovertarget={{id}}>
+            {{text}}
+        </button>
+    </form>
+</dialog>

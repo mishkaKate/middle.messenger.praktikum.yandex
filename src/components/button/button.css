@@ -5,6 +5,11 @@
   color: var(--color-active);
   background: transparent;
   cursor: pointer;
+
+  .icon,
+  img {
+    pointer-events: none;
+  }
 }
 
 .button-role-main {
@@ -15,6 +20,10 @@
 .button-role-back {
   height: 100vh;
   min-width: 48px;
+}
+
+.button-role-attantion {
+  color: var(--error-color);
 }
 
 .button-a {
