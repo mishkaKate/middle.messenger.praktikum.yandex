@@ -29,16 +29,16 @@ export async function signin(data: Indexed) {
     await loginAPIInstance.post('auth/signin', { data });
 
     return loginAPIInstance.get('auth/user');
-  } catch (e) {
-    errorHandlerDefault(e);
+  } catch {
+    errorHandlerDefault();
   }
 }
 
 export function getUser() {
   try {
     return loginAPIInstance.get('auth/user');
-  } catch (e) {
-    errorHandlerDefault(e);
+  } catch {
+    errorHandlerDefault();
   }
 }
 
@@ -48,8 +48,8 @@ export async function logout() {
 
     store.setState('userProfile', {});
     store.setState('chats', []);
-  } catch (e) {
-    errorHandlerDefault(e);
+  } catch {
+    errorHandlerDefault();
   }
 }
 
@@ -67,7 +67,7 @@ export async function checkUser() {
     }
 
     return true;
-  } catch (e) {
-    errorHandlerDefault(e);
+  } catch {
+    errorHandlerDefault();
   }
 }

@@ -1,3 +1,5 @@
+import router from '../router/router';
+
 export type ErrorHandler = (error: unknown) => void;
 
 export function handleError(errorHandler: ErrorHandler) {
@@ -29,6 +31,6 @@ export function handleError(errorHandler: ErrorHandler) {
   };
 }
 
-export function errorHandlerDefault(error: unknown) {
-  console.log(error);
+export function errorHandlerDefault() {
+  router.go('/500');
 }

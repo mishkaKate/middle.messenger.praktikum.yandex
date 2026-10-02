@@ -56,14 +56,17 @@ class Router {
 
   _onRoute(pathname: string) {
     const route = this.getRoute(pathname);
+    if (!route) {
+      this.go('/404');
+    }
     if (pathname !== '/' && pathname !== '/sign-up') {
       checkUser()
         .then((withUser) => {
           if (!withUser) {
             this.go('/');
           } else {
-            if (pathname === '/messenger') {
-              checkChats().then(() => {
+            if (pathname.includes('/messenger')) {
+              checkChats(pathname).then(() => {
                 this._go(pathname, route);
               });
             } else {
