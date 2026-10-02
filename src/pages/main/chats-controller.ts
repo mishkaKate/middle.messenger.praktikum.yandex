@@ -2,6 +2,7 @@ import {
   errorHandlerDefault,
   handleError,
 } from '../../decorators/handle-error';
+import router from '../../router/router';
 import store from '../../store';
 import { ChatsAPI } from './chats.api';
 
@@ -27,8 +28,7 @@ export class ChatsController {
 
   @handleError(errorHandlerDefault)
   public async setActiveChat(id: string) {
-    store.setState('activeChat', id);
-    this.updateChatUsers();
+    router.go(`/messenger/${id}`);
   }
 
   @handleError(errorHandlerDefault)

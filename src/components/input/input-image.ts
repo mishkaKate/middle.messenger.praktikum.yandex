@@ -1,7 +1,7 @@
 import { Block, type BlockOwnProps } from '../block/block';
 import tmpl from './input-image.hbs?raw';
 
-type Props = BlockOwnProps & {
+export type Props = BlockOwnProps & {
   name?: string;
   id?: string;
 };

@@ -9,7 +9,7 @@ class ChatListComponent extends Block<BlockOwnProps> {
   protected template = tmpl;
 }
 
-function mapStateToProps(state: State) {
+export function mapStateToProps(state: State) {
   return {
     chats:
       state.chats?.map((chat) => ({

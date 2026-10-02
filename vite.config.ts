@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig, ESBuildOptions } from 'vite';
 
 export default defineConfig({
@@ -14,4 +15,9 @@ export default defineConfig({
       },
     },
   } as ESBuildOptions,
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    include: ['**/*.{test,spec}.{js,ts}'],
+  },
 });
