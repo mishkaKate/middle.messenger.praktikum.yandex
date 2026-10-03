@@ -15,6 +15,10 @@ export class ChatsAPI extends BaseAPI {
     })) as Indexed;
   }
 
+  async getToken(chatId: string): Promise<Indexed> {
+    return (await chatAPIInstance.post(`chats/token/${chatId}`)) as Indexed;
+  }
+
   async addUser(chatId: number, userId: number) {
     return chatAPIInstance.put('chats/users', {
       data: { users: [userId], chatId },
@@ -41,5 +45,9 @@ export class ChatsAPI extends BaseAPI {
 
   async getUsers(id: number): Promise<Array<Indexed>> {
     return (await chatAPIInstance.get(`chats/${id}/users`)) as Array<Indexed>;
+  }
+
+  async getUnreadMessages(chatId: number): Promise<Indexed> {
+    return (await chatAPIInstance.get(`chats/new/${chatId}`)) as Indexed;
   }
 }

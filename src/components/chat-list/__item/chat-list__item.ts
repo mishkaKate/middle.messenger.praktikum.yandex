@@ -2,7 +2,7 @@ import { ChatsController } from '../../../pages/main/chats-controller';
 import { Block, type BlockOwnProps } from '../../block/block';
 import tmpl from './chat-list__item.hbs?raw';
 
-type Props = BlockOwnProps & {
+export type Props = BlockOwnProps & {
   avatar?: string | null;
 };
 export class ChatListItem extends Block<Props> {

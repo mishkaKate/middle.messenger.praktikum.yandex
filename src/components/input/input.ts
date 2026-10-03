@@ -2,7 +2,7 @@ import { Block, type BlockOwnProps } from '../block/block';
 import { Error } from '../error/error';
 import inputTmpl from './input.hbs?raw';
 
-type Props = BlockOwnProps & {
+export type Props = BlockOwnProps & {
   placeholder?: string;
   type?: string;
   name?: string;
