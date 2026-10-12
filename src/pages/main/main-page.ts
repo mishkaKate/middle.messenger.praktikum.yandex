@@ -1,8 +1,27 @@
 import { Block, type BlockOwnProps } from '../../components/block/block';
-import type { chatRecord } from '../../mocks/chats';
 import router from '../../router/router';
 import { ChatsController } from './chats-controller';
 import tmpl from './main-page.hbs?raw';
+
+export type chatRecord = {
+  id: number;
+  title: string;
+  avatar: string;
+  unread_count: number;
+  created_by: number;
+  last_message: {
+    user: {
+      first_name: string;
+      second_name: string;
+      avatar: string;
+      email: string;
+      login: string;
+      phone: string;
+    };
+    time: string;
+    content: string;
+  };
+};
 
 type mainPageProps = BlockOwnProps & {
   chats: chatRecord[];

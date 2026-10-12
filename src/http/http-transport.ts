@@ -1,6 +1,6 @@
 import type { Indexed } from '../utils/helpers';
 
-type RequestOptions = {
+export type RequestOptions = {
   method?: string;
   timeout?: number;
   headers?: Indexed;

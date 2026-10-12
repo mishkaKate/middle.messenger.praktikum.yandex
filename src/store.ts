@@ -1,3 +1,4 @@
+import type { WebSocketClient } from './services/websocket-client';
 import { set, type Indexed } from './utils/helpers';
 
 type Listener = () => void;
@@ -18,11 +19,21 @@ export type ChatItemState = {
   avatar: string | null;
 };
 
+export type Message = {
+  id: number;
+  content: string;
+  time: string;
+  author: string;
+  modificator: string;
+};
+
 export type State = {
   userProfile?: ProfileState;
   chats?: Array<ChatItemState>;
   activeChat?: number;
-  activeChatUsers?: Array<{ login: string }>;
+  activeChatUsers?: Array<{ login: string; id: number }>;
+  ws?: WebSocketClient;
+  messages?: Array<Message>;
 } & Indexed;
 
 class Store {

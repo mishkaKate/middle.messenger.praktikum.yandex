@@ -6,8 +6,11 @@
       source='breadcrums'}}}</button>
   </div>
   <div class='chat-content-body'>
-    {{{ChatContentMessege text='Hello!' time='12:33'}}}
-    {{{ChatContentMessege text='By!' time='12:35' modificator='my'}}}
+    <div ref="messagesList" id="chat-messages-list" class="chat-list-wrapper chat-messages-list">
+      {{#each messages}}
+      {{{ChatContentMessege text=content time=time modificator=modificator}}}
+      {{/each}}
+    </div>
   </div>
   {{{ChatContentSendForm}}}
   {{{Popup}}}

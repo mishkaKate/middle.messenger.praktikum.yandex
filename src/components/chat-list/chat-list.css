@@ -1,5 +1,8 @@
 .chat-list-wrapper {
   overflow: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .chat-list {

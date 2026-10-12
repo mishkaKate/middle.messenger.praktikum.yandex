@@ -1,6 +1,7 @@
 import Handlebars from 'handlebars';
+import { isEqual } from '../../utils/helpers';
 
-type EventListType = Partial<
+export type EventListType = Partial<
   Record<keyof HTMLElementEventMap, (e: Event) => void>
 >;
 export interface BlockOwnProps extends Record<string, unknown> {
@@ -135,6 +136,7 @@ export abstract class Block<Props extends BlockOwnProps> {
   }
 
   public setProps(props: Partial<Props>) {
+    console.log(isEqual(this.props, props), this.props, props);
     this.props = { ...this.props, ...props, __children: [], __refs: {} };
     this.render();
   }

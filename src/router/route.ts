@@ -38,6 +38,11 @@ export class Route<P extends BlockOwnProps> {
   }
 
   match(pathname: string) {
+    if (this._pathname === '/messenger') {
+      const regExp = /^\/messenger(?:\/\d+)?\/?$/;
+      return regExp.test(pathname);
+    }
+
     return pathname === this._pathname;
   }
 

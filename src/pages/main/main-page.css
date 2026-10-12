@@ -25,7 +25,12 @@ body {
     justify-content: end;
 
     & .icon {
+      pointer-events: none;
       margin-left: 8px;
+    }
+
+    .profile-button-text {
+      pointer-events: none;
     }
   }
 }
